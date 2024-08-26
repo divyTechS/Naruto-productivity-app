@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap">
+    <style>
+        body {
+            background-image: url('narutoprofile.jpg');
+            background-size: cover;
+            color: rgb(0, 255, 51);
+            background-repeat: no-repeat;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 70vh;
+            width: 35%;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            animation: borderAnimation 2s infinite;
+            margin-top: 50px;
+        }
+
+        @keyframes borderAnimation {
+            0% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: rgb(255, 162, 0);
+            }
+            100% {
+                border-color: transparent;
+            }
+        }
+
+        h2 {
+            color: rgb(255, 162, 0);
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .credentials input {
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .credentials button {
+            background-color: rgb(255, 162, 0);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .credentials button:hover {
+            background-color: rgb(255, 120, 0);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .achievements {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="credentials">
+        <input type="text" id="username" placeholder="Enter your Ninja name" style="text-align: center;">
+        <button id="submit">Submit</button>
+
+        <h2 id="user-name">UserName: </h2>
+        <h2 id="chakra-status">Chakra cultivation: Start Cultivating</h2>
+        <a href="timer2.html"><button id="chakra-button">Cultivate Chakra</button></a>
+        
+        <h2 id="current-date">Date: </h2><br>
+        
+        <h2 id="missions-completed">Missions Completed: 0</h2> <!-- Added missions completed -->
+
+        <center><button><a href="index.html">Young Ninja, Let's go to your training academy</a></button></center>
+    </div>
+    <div class="achievements">
+        <h2>Achievements: None</h2>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputField = document.getElementById('username'); // Corrected to match ID in HTML
+            const submitButton = document.getElementById('submit');
+            const userName = document.getElementById('user-name');
+            const userXP = document.createElement('h2'); // Dynamically create if needed
+            const userRank = document.createElement('h2'); // Dynamically create if needed
+            const chakraButton = document.getElementById('chakra-button');
+            const chakraStatus = document.getElementById('chakra-status');
+            const currentDateElement = document.getElementById('current-date');
+            const missionsCompletedElement = document.getElementById('missions-completed');
+
+            // Initial XP (can be set to a different value as needed)
+            let xp = 0;
+
+            // Function to update the current date
+            const updateDate = () => {
+                const today = new Date();
+                currentDateElement.textContent = `Date: ${today.toDateString()}`;
+            };
+
+            // Function to update rank based on XP
+            const updateRank = () => {
+                if (xp > 500) {
+                    userRank.textContent = 'Ranking: Hokage';
+                } else if (xp > 200) {
+                    userRank.textContent = 'Ranking: Shinobi';
+                } else if (xp > 100) {
+                    userRank.textContent = 'Ranking: Shonin';
+                } else if (xp > 50) {
+                    userRank.textContent = 'Ranking: Junin';
+                } else {
+                    userRank.textContent = 'Ranking: Genin';
+                }
+                userXP.textContent = `XP: ${xp}`;
+                document.body.appendChild(userXP); // Append dynamically if needed
+                document.body.appendChild(userRank); // Append dynamically if needed
+            };
+
+            // Update the date and rank when the page loads
+            updateDate();
+            updateRank();
+
+            // Add event listener to update the username
+            submitButton.addEventListener('click', () => {
+                const inputValue = inputField.value;
+                if (inputValue) {
+                    userName.textContent = `UserName: ${inputValue}`;
+                } else {
+                    userName.textContent = 'UserName: Please enter your Ninja name!';
+                }
+            });
+
+            // Add event listener to update chakra cultivation
+            chakraButton.addEventListener('click', () => {
+                chakraStatus.textContent = 'Chakra cultivation: Cultivating...';
+                chakraButton.textContent = 'Chakra Cultivation in Progress...';
+
+                // Simulate a delay for cultivation
+                setTimeout(() => {
+                    chakraStatus.textContent = 'Chakra cultivation: Cultivation Complete!';
+                    chakraButton.textContent = 'Cultivation Done';
+                    
+                    // Simulate XP gain after cultivation
+                    xp += 100; // Example XP gain
+                    updateRank(); // Update rank based on new XP
+
+                    // Update the number of completed missions
+                    const completedMissions = parseInt(missionsCompletedElement.textContent.split(': ')[1]) || 0;
+                    missionsCompletedElement.textContent = `Missions Completed: ${completedMissions + 1}`;
+                    localStorage.setItem("completedMissions", completedMissions + 1);
+                }, 5000); // 5 seconds for cultivation
+            });
+
+            // Function to update the number of completed missions
+            const updateMissionsCompleted = () => {
+                const completedMissions = localStorage.getItem("completedMissions") || 0;
+                missionsCompletedElement.textContent = `Missions Completed: ${completedMissions}`;
+            };
+
+            // Update the missions completed count when the page loads
+            updateMissionsCompleted();
+        });
+    </script>
+</body>
+</html>

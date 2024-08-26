@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('naruto-background.jpg'); /* Naruto-themed background */
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    width: 95%;
+    height: 2rem;
+}
+.profile p {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+.profile img {
+    height: 50px;
+}
+.logo h2 {
+    color: #FFA500; /* Naruto’s signature orange */
+    font-size: 2.5rem;
+    font-family: 'Ninja Naruto', sans-serif; /* Use a Naruto-themed font */
+}
+#app {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less opaque for a softer look */
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for a more dramatic effect */
+    text-align: center;
+    border: 2px solid #FF4500; /* Naruto’s orange color as border */
+}
+
+h1 {
+    font-family: 'Comic Sans MS', cursive; /* Naruto's playful font */
+    color: #FF4500; /* Naruto's signature orange color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for added depth */
+}
+
+#transcript {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FF4500; /* Naruto’s orange color for the border */
+    font-family: 'Comic Sans MS', cursive;
+}
+
+#saveNoteButton {
+    padding: 10px 20px;
+    background-color: #FF4500; /* Naruto’s orange color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+#saveNoteButton:hover {
+    background-color: #ff6347; /* Slightly lighter orange for hover effect */
+}
+
+.note {
+    background-color: #fff5e1; /* A soft, parchment-like background */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    border: 1px solid #FF4500; /* Naruto’s orange color for the border */
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.deleteButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: #FF4500; /* Naruto’s orange color for delete button */
+    font-weight: bold;
+}
+
+.deleteButton:hover {
+    color: #FF0000; /* Red color for hover effect */
+}
+.recog{
+    height:3rem;
+    background-color: #FF4500;
+    color: white;
+}

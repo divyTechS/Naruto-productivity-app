@@ -1,0 +1,103 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ninja Naruto', sans-serif; /* Optionally import a similar font */
+}
+
+body {
+    background-image: url('signinimage.jpeg'); /* Naruto village background */
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Center content container */
+.content {
+    background-color: rgba(0, 0, 0, 0.501); /* Dark transparent background */
+    margin-right: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Orange glow */
+    width: 350px;
+    text-align: center;
+    border: 3px solid #FF5F00; /* Orange border */
+    /* Animation for border */
+    
+        animation: borderAnimation 2s infinite;
+        
+
+   
+}
+@keyframes borderAnimation {
+    0% {
+        border-color: #FF5F00;
+    }
+    50% {
+        border-color: #FFDE00;
+    }
+    100% {
+        border-color: #FF5F00;
+    }
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #FFDE00; /* Naruto's signature yellow */
+    text-shadow: 2px 2px #FF5F00; /* Orange shadow */
+    margin-bottom: 20px;
+}
+
+/* Label and input fields */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFDE00;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px #FF5F00;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 2px solid #FF5F00;
+    border-radius: 5px;
+    color: #FFDE00;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px #FF5F00;
+}
+
+/* Button styling */
+button {
+    background-color: #FFDE00;
+    color: black;
+    padding: 12px 20px;
+    border: 2px solid #FF5F00;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: backgrou
+    nd-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF5F00;
+    color: #fff;
+}
+
+/* Centering form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

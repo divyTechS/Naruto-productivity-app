@@ -1,0 +1,94 @@
+body{
+    background-image: url('naruto.png');
+    background-repeat: no-repeat;
+   background-size: 100% 100%;
+  background-position: cover;
+  /* brightness: 200%; */
+  height: 100vh;
+  width: 100vw;
+}
+    
+.container{
+ 
+
+
+    height: 80vh;
+    width: 30vw;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(32, 117, 192);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(217, 209, 209, 0.056);
+    color: aqua;
+    font-weight: 200;
+   
+    /* margin-left: 500px; */
+    /* margin-bottom: 1000px; */
+}
+.container{
+    border: 3px solid rgb(238, 127, 47);
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(21, 20, 20, 0.2);
+background-color: hwb(0 95% 4% / 0.184);
+}
+.container {
+    border: 3px solid rgb(238, 127, 47);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: borderAnimation 2s infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: rgb(139, 47, 238);
+    }
+    25% {
+        border-color: rgb(32, 117, 192);
+    }
+    50% {
+        border-color: rgb(238, 127, 47);
+    }
+    75% {
+        border-color: rgb(0, 0, 0);
+    }
+    100% {
+        border-color: rgb(139, 47, 238);
+    }
+}
+h1{
+    animation: textAnimation 3s steps(10) infinite;
+
+/* animation: textAnimation 2s infinite; */
+}
+
+@keyframes textAnimation {
+    0% {
+        color: aqua;
+    }
+    25% {
+        color: rgb(32, 117, 192);
+    }
+    50% {
+        color: rgb(238, 127, 47);
+    }
+    75% {
+        color: rgba(217, 209, 209, 0.056);
+    }
+    100% {
+        color: aqua;
+    }
+}
+
+/* @keyframes borderAnimation {
+    0% {
+        border-color: rgb(139, 47, 238);
+    }
+    50% {
+        border-color: rgb(32, 117, 192);
+    }
+    100% {
+        border-color: rgb(238, 127, 47);
+    }
+} */

@@ -1,0 +1,32 @@
+body{
+    background-image: url('narutoprofile.jpg');
+    background-position: cover;
+    background-size: cover;
+    color: rgb(0, 255, 51);
+    background-repeat: no-repeat;
+
+}
+
+
+    .credentials {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, 0.084);
+        height: 70vh;
+        width: 35%;
+        border: 2px solid transparent;
+        animation: borderAnimation 2s infinite;
+    }
+
+    @keyframes borderAnimation {
+        0% {
+            border-color: transparent;
+        }
+        50% {
+            border-color: rgb(255, 162, 0);
+        }
+        100% {
+            border-color: transparent;
+        }
+    }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Shinobi</title>
+    <!-- Inline CSS -->
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Shadows Into Light', cursive;
+            background-color: #0d0d0d;
+            overflow: hidden;
+        }
+
+        .container {
+            background-image: url('Konaha_Village.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #FFD700; /* Naruto's iconic yellow */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.6); /* Transparent background */
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .button {
+            margin-top: 2rem;
+        }
+
+        .enter-button {
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border: 3px solid #FFA500;
+            border-radius: 10px;
+            background-color: #FF4500;
+            color: white;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .enter-button:hover {
+            background-color: #FFD700;
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(255, 255, 0, 0.8);
+        }
+
+        .enter-button a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+
+        audio {
+            display: none; /* Hide the audio player */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="hero">WELCOME SHINOBI</h1>
+        <div class="button">
+            <p><button class="enter-button"><a href="signin.html">Enter the Village</a></button></p>
+        </div>
+    </div>
+
+    <!-- Audio player for background music -->
+    <audio id="background-music" src="naruto main.mp3" type="audio/mp3"></audio>
+
+    <!-- Inline JavaScript -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backgroundMusic = document.getElementById('background-music');
+            
+            // Set volume (optional)
+            backgroundMusic.volume = 0.5;
+            
+            // Attempt to autoplay
+            backgroundMusic.play().catch(error => {
+                console.log('Autoplay failed, user interaction needed');
+                
+                // Show a message or play button to start the music manually
+                alert('Click anywhere on the page to start the music');
+                document.body.addEventListener('click', function() {
+                    backgroundMusic.play();
+                }, { once: true });
+            });
+        });
+    </script> -->
+</body>
+</html>

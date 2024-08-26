@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Reminder</title>
+    <style>
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h2>Task Reminder</h2>
+        <p>Remember to complete your task!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function closePopup() {
+            var popup = document.querySelector('.popup');
+            popup.style.display = 'none';
+
+        }
+        setTimeout(function() {
+            var popup = document.querySelector('.popup');
+            popup.style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+</html>

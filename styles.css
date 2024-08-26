@@ -1,0 +1,74 @@
+/* Styling for the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: #0d0d0d;
+    overflow: hidden;
+}
+
+.container {
+    background-image: url('Konaha_Village.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FFD700; /* Naruto's iconic yellow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6); /* Transparent background */
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.button {
+    margin-top: 2rem;
+}
+
+.enter-button {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: 3px solid #FFA500;
+    border-radius: 10px;
+    background-color: #FF4500;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.enter-button:hover {
+    background-color: #FFD700;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 255, 0, 0.8);
+}
+
+/* Styling for the link inside the button */
+.enter-button a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Animation for hovering effect */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}

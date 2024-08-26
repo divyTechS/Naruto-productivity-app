@@ -1,0 +1,28 @@
+.hover-container {
+    position: relative;
+    display: inline-block;
+    margin: 500px;
+}
+
+.hover-text {
+
+    visibility: hidden; /* Initially hidden */
+    background-color: #af2f2f;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 100%; /* Positioned above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hover-container:hover .hover-text {
+
+    visibility: visible;
+    opacity: 1; /* Fade-in effect */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Notes App</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h2>Ninja Notes</h2>
+        </div>
+        <div class="profile">
+            <p><a href="index.html"><img src="shuriken.png" alt="Profile"></a> PROFILE</p>
+        </div>
+    </div>
+    <div id="app">
+        <h1>Naruto Notes</h1>
+        <textarea id="transcript" class="notes-input" placeholder="Write your note here..."></textarea>
+        
+        <label for="language">Select Language:</label> 
+        <select id="language">
+            <option value="en-US">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="mr-IN">Marathi</option>
+            <!-- Add more languages as needed -->
+        </select>
+        
+        <button id="saveNoteButton">Save Note</button>
+
+        <div id="notesContainer"></div>
+    </div>
+    
+    <br>
+    <center><button class="recog" onclick="startRecognition()">Speak </button></center>
+
+    <script>
+        function startRecognition() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            const language = document.getElementById('language').value;
+            recognition.lang = language;
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('transcript').value = transcript;
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Recognition error:', event.error);
+            };
+        }
+    </script>
+    <script src="notes.js"></script>
+</body>
+</html>

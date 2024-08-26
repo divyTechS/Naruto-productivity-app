@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="calendar.css">
+
+</head>
+<style>
+    /* Calendar styles */
+    body{
+        background-image: url('calendarbg1.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+        opacity: 0.9;
+      background-color:black;
+        color: rgb(255, 238, 0);
+        
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        text-align: center;
+        padding: 10px;
+        background-color: #f2f2f2;
+    }
+
+    td {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    td:hover {
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+
+/* Enlarge calendar */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th {
+    text-align: center;
+    padding: 15px;
+    background-color: #f2f2f2;
+}
+
+td {
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #ccc;
+}
+
+td:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+</style>
+<body>
+<div id="calendar"></div>
+
+<script>
+    // Get the current date
+    var currentDate = new Date();
+
+    // Get the month and year
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+
+    // Create a new Date object for the first day of the month
+    var firstDay = new Date(year, month - 1, 1);
+
+    // Get the number of days in the month
+    var daysInMonth = new Date(year, month, 0).getDate();
+
+    // Create the calendar table
+    var calendarTable = document.createElement("table");
+
+    // Create the table header
+    var tableHeader = document.createElement("thead");
+    var headerRow = document.createElement("tr");
+    var headerCell = document.createElement("th");
+    headerCell.colSpan = 7;
+    headerCell.textContent = month + "/" + year;
+    headerRow.appendChild(headerCell);
+    tableHeader.appendChild(headerRow);
+    calendarTable.appendChild(tableHeader);
+
+    // Create the table body
+    var tableBody = document.createElement("tbody");
+
+    // Create the table rows and cells for each day
+    var currentDay = 1;
+    for (var i = 0; i < 6; i++) {
+        var row = document.createElement("tr");
+        for (var j = 0; j < 7; j++) {
+            var cell = document.createElement("td");
+            if (i === 0 && j < firstDay.getDay()) {
+                // Empty cells before the first day of the month
+                cell.textContent = "";
+            } else if (currentDay > daysInMonth) {
+                // Empty cells after the last day of the month
+                cell.textContent = "";
+            } else {
+                // Cells with the day number
+                cell.textContent = currentDay;
+                if (currentDay === currentDate.getDate()) {
+                    // Add color to present date
+                    cell.classList.add("calendar-color");
+                }
+                currentDay++;
+            }
+            row.appendChild(cell);
+        }
+        tableBody.appendChild(row);
+    }
+
+    calendarTable.appendChild(tableBody);
+
+    // Append the calendar table to the calendar div
+    var calendarDiv = document.getElementById("calendar");
+    calendarDiv.appendChild(calendarTable);
+</script>
+</body>
+</html>

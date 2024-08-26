@@ -1,0 +1,95 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ninja Naruto', sans-serif;
+}
+
+body {
+    background-image: url('narutotimer.jpg'); /* Naruto-themed background */
+    background-size: cover;
+    background-attachment: fixed;
+  
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Main container */
+.container {
+    margin-top: 200px;
+    margin-left: 500px;
+    background-color: rgba(0, 0, 0, 0.224);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Orange glow */
+    text-align: center;
+    border: 3px solid #FF5F00;
+    width: 400px;
+}
+
+/* Heading styles */
+h1 {
+    color: #FFDE00; /* Naruto's signature yellow */
+    text-shadow: 2px 2px #FF5F00; /* Orange shadow */
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+/* Timer display */
+#time {
+    font-size: 4rem;
+    color: #FFDE00;
+    text-shadow: 2px 2px #FF5F00;
+    margin-bottom: 20px;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    top:1;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+}
+.profile p {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+.profile img {
+    height: 50px;
+}
+.logo h2 {
+    color: #FFA500; /* Naruto’s signature orange */
+    font-size: 2.5rem;
+    font-family: 'Ninja Naruto', sans-serif; /* Use a Naruto-themed font */
+}
+/* Button styles */
+button {
+    background-color: #FFDE00;
+    color: black;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #FF5F00;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF5F00;
+    color: #fff;
+}
+
+/* Message styling */
+#message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #FFDE00;
+    text-shadow: 1px 1px #FF5F00;
+}
